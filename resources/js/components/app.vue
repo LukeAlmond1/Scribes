@@ -1,4 +1,15 @@
 <template lang="pug">
 div
-    h1(class="text-green-700") Get out my beans bro
+    Header()
 </template>
+
+<script>
+// ============================================================================================
+import Header from "./page/header.vue"
+
+// ============================================================================================
+export default {
+    name: "App",
+    components: { Header }
+}
+</script>
