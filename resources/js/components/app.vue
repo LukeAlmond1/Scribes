@@ -1,6 +1,7 @@
 <template lang="pug">
 div
     Header()
+
 </template>
 
 <script>
