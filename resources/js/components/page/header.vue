@@ -13,7 +13,7 @@ div
 
             li(class="cursor-pointer font-extrabold py-4 px-6 rounded-md hover:text-teal-700") Account
 
-            button(class="bg-teal-600 font-extrabold py-4 px-6 rounded-md text-white hover:bg-teal-700") Create Blog
+            button(class="bg-teal-700 font-extrabold py-4 px-6 rounded-md text-white hover:bg-teal-800") Create Blog
 
         svg(
             @click="showModal = true"
