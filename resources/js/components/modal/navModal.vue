@@ -1,0 +1,58 @@
+<template lang="pug">
+div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
+    nav(class="h-full relative")
+        //- Nav header
+        //- -----------------------------------------------------------------------------------
+        header(class="border-b-2 flex items-center justify-between mb-6 pb-6 px-2")
+            p(class="font-black font-serif text-2xl") Scribes
+
+            svg(
+                @click="$emit('modal-change')"
+                class="w-6 h-6"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="black"
+            )
+                path(
+
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M6 18L18 6M6 6l12 12"
+                )
+
+        ul()
+            //- Blogs tab
+            //- -----------------------------------------------------------------------------------
+            li(class="bg-gray-50 font-extrabold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-lg")
+                blog-icon()
+
+                p() Blogs
+
+            //- Account tab
+            //- -----------------------------------------------------------------------------------
+            li(class="bg-gray-50 font-extrabold flex gap-3 items-center px-6 py-4 rounded-md text-lg")
+                account-icon()
+
+                p() Account
+
+        //- Create blog
+        //- -----------------------------------------------------------------------------------
+        button(class="absolute bottom-0 bg-teal-600 font-extrabold py-6 rounded-md text-white w-full hover:bg-teal-700") Create Blog
+
+</template>
+
+<script>
+    // ============================================================================================
+    import Blog from "../icons/blog.vue"
+    import Account from "../icons/account.vue"
+
+    // ============================================================================================
+    export default {
+        name: "NavModal",
+        components: {
+            "blog-icon": Blog,
+            "account-icon": Account
+        }
+    }
+</script>
