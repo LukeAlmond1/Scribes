@@ -1,17 +1,45 @@
 <template lang="pug">
 div
-    nav(class="bg-white drop-shadow-md flex justify-between px-8 py-12 w-full")
-        p() Logo
-        ul(class="flex gap-4 justify-end w-1/2")
-            li(class="font-sans") Blogs
+    NavModal(:showModal="showModal")
 
-            li() Account
+    nav(class="bg-white drop-shadow flex items-center justify-between py-6 px-8 w-full")
+        p(class="font-black font-serif text-2xl") Scribes
+
+        ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
+            li(class="cursor-pointer font-semibold py-4 px-6 rounded-md hover:text-emerald-700") Blogs
+
+            li(class="cursor-pointer font-semibold py-4 px-6 rounded-md hover:text-emerald-700") Account
+
+            button(class="bg-emerald-500 font-semibold py-4 px-6 rounded-md text-white hover:bg-emerald-600") Create Blog
+
+        svg(
+            @click="showModal = true"
+            class="w-6 h-6 lg:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+        )
+            path(
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+            )
 
 </template>
 
 <script>
     // ============================================================================================
+    import NavModal from "../modal/navModal.vue"
+
     export default {
-        name: "Header"
+        name: "Header",
+        components: { NavModal },
+        data() {
+            return {
+                showModal: false
+            }
+        }
     }
 </script>
