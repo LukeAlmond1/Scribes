@@ -1,16 +1,19 @@
 <template lang="pug">
 div
-    NavModal(:showModal="showModal")
+    NavModal(
+        @modal-change="showModal = false"
+        v-if="showModal"
+    )
 
     nav(class="bg-white drop-shadow flex items-center justify-between py-6 px-8 w-full")
         p(class="font-black font-serif text-2xl") Scribes
 
         ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
-            li(class="cursor-pointer font-semibold py-4 px-6 rounded-md hover:text-emerald-700") Blogs
+            li(class="cursor-pointer font-extrabold py-4 px-6 rounded-md hover:text-teal-700") Blogs
 
-            li(class="cursor-pointer font-semibold py-4 px-6 rounded-md hover:text-emerald-700") Account
+            li(class="cursor-pointer font-extrabold py-4 px-6 rounded-md hover:text-teal-700") Account
 
-            button(class="bg-emerald-500 font-semibold py-4 px-6 rounded-md text-white hover:bg-emerald-600") Create Blog
+            button(class="bg-teal-600 font-extrabold py-4 px-6 rounded-md text-white hover:bg-teal-700") Create Blog
 
         svg(
             @click="showModal = true"
@@ -18,7 +21,7 @@ div
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
-            stroke="currentColor"
+            stroke="black"
         )
             path(
                 stroke-linecap="round"
