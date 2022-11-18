@@ -38,7 +38,7 @@ div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
 
         //- Create blog
         //- -----------------------------------------------------------------------------------
-        button(class="absolute bottom-0 bg-teal-600 font-extrabold py-6 rounded-md text-white w-full hover:bg-teal-700") Create Blog
+        button(class="absolute bottom-0 bg-teal-700 font-extrabold py-6 rounded-md text-white w-full hover:bg-teal-800") Create Blog
 
 </template>
 
