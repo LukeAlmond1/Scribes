@@ -1,11 +1,11 @@
 <template lang="pug">
-div
+div()
     NavModal(
         @modal-change="showModal = false"
         v-if="showModal"
     )
 
-    nav(class="bg-white drop-shadow flex items-center justify-between py-6 px-8 w-full")
+    nav(class="bg-white flex items-center justify-between mx-auto py-6 w-11/12")
         p(class="font-black font-serif text-2xl text-gray-800") Scribes
 
         ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
