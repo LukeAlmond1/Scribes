@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+// Blog routes
+// ------------------------------------------------------------------------------------------------
+Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'index']);
