@@ -10,6 +10,7 @@ div
                 search-icon()
 
             input(
+                v-model="searchTerm"
                 class="p-6 outline-none rounded-md text-gray-800 w-2/3 placeholder:text-gray-400 md:p-0"
                 placeholder="Search for a blog..."
             )
@@ -17,7 +18,7 @@ div
     //- Search summary
     //- -------------------------------------------------------------------------------------------
     section(class="flex flex-col gap-2 items-center justify-center mx-auto mb-8 w-11/12")
-        h1(class="font-bold text-gray-800 text-2xl lg:text-3xl") Philosphy
+        h1(class="font-bold text-gray-800 text-2xl lg:text-3xl") {{ searchTerm }}
 
         p(class="text-gray-500 text-center lg:text-lg") There seems to be 100 blogs for that term
 
@@ -103,7 +104,8 @@ div
                     {
                         tag: "💧 Light Reads", link: ""
                     }
-                ]
+                ],
+                searchTerm: ""
             }
         }
     }
