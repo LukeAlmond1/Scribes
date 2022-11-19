@@ -5,13 +5,13 @@ div
 </template>
 
 <script>
-// ============================================================================================
-import Header from "../../components/page/header.vue"
-import Search from "../../components/blog/search.vue"
+    // ============================================================================================
+    import Header from "../../components/page/header.vue"
+    import Search from "../../components/blog/search.vue"
 
-// ============================================================================================
-export default {
-    name: "Blog",
-    components: { Header, Search }
-}
+    // ============================================================================================
+    export default {
+        name: "Blog",
+        components: { Header, Search }
+    }
 </script>
