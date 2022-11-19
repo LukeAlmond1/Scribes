@@ -6,14 +6,14 @@ div
     )
 
     nav(class="bg-white drop-shadow flex items-center justify-between py-6 px-8 w-full")
-        p(class="font-black font-serif text-2xl") Scribes
+        p(class="font-black font-serif text-2xl text-gray-800") Scribes
 
         ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
-            li(class="cursor-pointer font-bold py-4 px-6 rounded-md hover:text-teal-700") Blogs
+            li(class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-teal-700") Blogs
 
-            li(class="cursor-pointer font-bold py-4 px-6 rounded-md hover:text-teal-700") Account
+            li(class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-teal-700") Account
 
-            button(class="bg-teal-700 font-bold py-4 px-6 rounded-md text-white hover:bg-teal-800") Create Blog
+            button(class="bg-teal-700 font-medium py-4 px-6 rounded-md text-white hover:bg-teal-800") Create Blog
 
         svg(
             @click="showModal = true"

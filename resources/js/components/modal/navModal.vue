@@ -24,14 +24,14 @@ div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
         ul()
             //- Blogs tab
             //- -----------------------------------------------------------------------------------
-            li(class="bg-gray-50 font-bold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-lg")
+            li(class="bg-gray-50 font-bold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-gray-800 text-lg")
                 blog-icon()
 
                 p() Blogs
 
             //- Account tab
             //- -----------------------------------------------------------------------------------
-            li(class="bg-gray-50 font-bold flex gap-3 items-center px-6 py-4 rounded-md text-lg")
+            li(class="bg-gray-50 font-bold flex gap-3 items-center px-6 py-4 rounded-md text-gray-800 text-lg")
                 account-icon()
 
                 p() Account
