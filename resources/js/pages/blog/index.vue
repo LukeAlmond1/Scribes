@@ -5,11 +5,11 @@ div
 
 <script>
 // ============================================================================================
-import Header from "./page/header.vue"
+import Header from "../../components/page/header.vue"
 
 // ============================================================================================
 export default {
-    name: "App",
+    name: "Blog",
     components: { Header }
 }
 </script>

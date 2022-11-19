@@ -24,21 +24,21 @@ div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
         ul()
             //- Blogs tab
             //- -----------------------------------------------------------------------------------
-            li(class="bg-gray-50 font-extrabold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-lg")
+            li(class="bg-gray-50 font-bold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-lg")
                 blog-icon()
 
                 p() Blogs
 
             //- Account tab
             //- -----------------------------------------------------------------------------------
-            li(class="bg-gray-50 font-extrabold flex gap-3 items-center px-6 py-4 rounded-md text-lg")
+            li(class="bg-gray-50 font-bold flex gap-3 items-center px-6 py-4 rounded-md text-lg")
                 account-icon()
 
                 p() Account
 
         //- Create blog
         //- -----------------------------------------------------------------------------------
-        button(class="absolute bottom-0 bg-teal-700 font-extrabold py-6 rounded-md text-white w-full hover:bg-teal-800") Create Blog
+        button(class="absolute bottom-0 bg-teal-700 font-bold py-6 rounded-md text-white w-full hover:bg-teal-800") Create Blog
 
 </template>
 
