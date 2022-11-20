@@ -60,10 +60,23 @@ div
 
         //- Filters
         //- ---------------------------------------------------------------------------------------
-        aside(class="border-2 border-gray-100 cursor-pointer flex gap-4 h-16 items-center px-4 rounded-md text-gray-500 w-full xl:w-auto lg:h-12")
-            filter-icon()
+        fieldset(class="w-full xl:w-auto")
+            aside(
+                @click="openFilter = true"
+                class="border-2 border-gray-100 cursor-pointer flex gap-3 h-16 items-center mb-2 px-4 rounded-md text-gray-500 xl:w-48 lg:h-12"
+            )
+                filter-icon()
 
-            p() Filters
+                p() {{ selectedFilterOpt }}
+
+            //- Filter by popup modal
+            //- ---------------------------------------------------------------------------------------
+            FilterBy(
+                v-if="openFilter"
+                @change-filter-opt="handleFilterChange"
+                @close-filter-modal="openFilter = false"
+                :selectedFilterOpt="selectedFilterOpt"
+            )
 
 </template>
 
@@ -77,6 +90,7 @@ div
     // Components
     // ================================================================================================
     import SortBy from "../../components/modal/popup/sortBy.vue"
+    import FilterBy from "../../components/modal/popup/filterBy.vue"
 
     // ================================================================================================
     export default {
@@ -85,7 +99,8 @@ div
             "search-icon": Search,
             "filter-icon": Filter,
             "sort-icon": Sort,
-            SortBy
+            SortBy,
+            FilterBy
         },
         data() {
             return {
@@ -105,12 +120,21 @@ div
                 ],
                 searchTerm: "",
                 openSort: false,
-                selectedSortOpt: "Popular"
+                selectedSortOpt: "Popular",
+                openFilter: false,
+                selectedFilterOpt: "None"
             }
         },
         methods: {
             handleSortChange(opt) {
                 this.selectedSortOpt = opt;
+            },
+            handleFilterChange(opt) {
+                if (opt === "None") {
+                    this.selectedFilterOpt = "Filters"
+                } else {
+                    this.selectedFilterOpt = opt;
+                }
             }
         }
     }
