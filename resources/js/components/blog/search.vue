@@ -33,7 +33,7 @@ div
         //- ---------------------------------------------------------------------------------------
         fieldset(class="w-full xl:w-auto")
             ui-select(
-                @open-select-modal="openSort = true"
+                @open-select-modal="openSort = !openSort"
                 :selection="selectedSortOpt"
             )
                 template(#icon)
@@ -66,7 +66,7 @@ div
         //- ---------------------------------------------------------------------------------------
         fieldset(class="w-full xl:w-auto")
             ui-select(
-                @open-select-modal="openFilter = true"
+                @open-select-modal="openFilter = !openFilter"
                 :selection="selectedFilterOpt"
             )
                 template(#icon)
