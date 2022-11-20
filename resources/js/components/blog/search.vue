@@ -12,7 +12,7 @@ div
             input(
                 v-model="searchTerm"
                 spellcheck="false"
-                class="p-6 outline-none rounded-md text-gray-800 w-2/3 placeholder:text-gray-400 md:p-0"
+                class="p-6 rounded-md outline-none text-gray-800 w-11/12 placeholder:text-gray-400 md:p-0"
                 placeholder="Search for a blog..."
             )
 
@@ -32,54 +32,55 @@ div
         //- Sort by
         //- ---------------------------------------------------------------------------------------
         fieldset(class="w-full xl:w-auto")
-            aside(
-                @click="openSort = true"
-                class="border-2 border-gray-100 cursor-pointer flex h-16 items-center justify-between mb-2 px-4 rounded-md text-gray-500 xl:w-48 lg:h-12"
+            ui-select(
+                @open-select-modal="openSort = true"
+                :selection="selectedSortOpt"
             )
-                p() {{ selectedSortOpt }}
-
-                sort-icon()
+                template(#icon)
+                    sort-icon()
 
             //- Sort by popup modal
             //- ---------------------------------------------------------------------------------------
-            SortBy(
+            ui-popup(
                 v-if="openSort"
-                @change-sort-opt="handleSortChange"
-                @close-sort-modal="openSort = false"
-                :selectedSortOpt="selectedSortOpt"
+                @change-sort="handleSortChange"
+                @close-sort="openSort = false"
+                :selection="selectedSortOpt"
+                :data="sortOptions"
+                :type="'sort'"
             )
 
         //- Tags
         //- ---------------------------------------------------------------------------------------
         menu(class="grid gap-x-6 gap-y-4 sm:grid-cols-2 w-full lg:grid-cols-4 xl:w-auto")
-            a(
+            ui-tag(
                 v-for="(item, index) in articleTags"
                 :href="item.link"
                 :title="item.tag"
                 :key="index"
-                class="bg-gray-50 border-2 border-gray-50 font-semibold flex h-16 items-center justify-center px-4 rounded-md text-gray-800 hover:border-gray-200 lg:h-12"
-                rel="noopener noreferrer nofollow"
-                target="_blank"
-            ) {{ item.tag }}
+                :value="item.tag"
+                class="hover:border-gray-200"
+            )
 
         //- Filters
         //- ---------------------------------------------------------------------------------------
         fieldset(class="w-full xl:w-auto")
-            aside(
-                @click="openFilter = true"
-                class="border-2 border-gray-100 cursor-pointer flex gap-3 h-16 items-center mb-2 px-4 rounded-md text-gray-500 xl:w-48 lg:h-12"
+            ui-select(
+                @open-select-modal="openFilter = true"
+                :selection="selectedFilterOpt"
             )
-                filter-icon()
-
-                p() {{ selectedFilterOpt }}
+                template(#icon)
+                    filter-icon()
 
             //- Filter by popup modal
             //- ---------------------------------------------------------------------------------------
-            FilterBy(
+            ui-popup(
                 v-if="openFilter"
-                @change-filter-opt="handleFilterChange"
-                @close-filter-modal="openFilter = false"
-                :selectedFilterOpt="selectedFilterOpt"
+                @change-filter="handleFilterChange"
+                @close-filter="openFilter = false"
+                :selection="selectedFilterOpt"
+                :data="filterOptions"
+                :type="'filter'"
             )
 
 </template>
@@ -96,6 +97,12 @@ div
     import SortBy from "../../components/modal/popup/sortBy.vue"
     import FilterBy from "../../components/modal/popup/filterBy.vue"
 
+    // UI
+    // ================================================================================================
+    import Tag from "../../components/ui/tag.vue"
+    import Select from "../../components/ui/select.vue"
+    import PopUp from "../../components/ui/popup.vue"
+
     // ================================================================================================
     export default {
         name: "Search",
@@ -103,6 +110,9 @@ div
             "search-icon": Search,
             "filter-icon": Filter,
             "sort-icon": Sort,
+            "ui-tag": Tag,
+            "ui-select": Select,
+            "ui-popup": PopUp,
             SortBy,
             FilterBy
         },
@@ -121,6 +131,17 @@ div
                     {
                         tag: "💧 Light Reads", link: ""
                     }
+                ],
+                filterOptions: [
+                    "Verified authors",
+                    "Views < 100",
+                    "Shares < 100",
+                    "None"
+                ],
+                sortOptions: [
+                    "Popular",
+                    "Least popular",
+                    "Upload date"
                 ],
                 searchTerm: "",
                 openSort: false,
