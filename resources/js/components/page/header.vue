@@ -1,5 +1,5 @@
 <template lang="pug">
-div()
+div
     NavModal(
         @modal-change="showModal = false"
         v-if="showModal"
@@ -34,7 +34,7 @@ div()
 
 <script>
     // ============================================================================================
-    import NavModal from "../modal/navModal.vue"
+    import NavModal from "../modal/page/navModal.vue"
 
     export default {
         name: "Header",

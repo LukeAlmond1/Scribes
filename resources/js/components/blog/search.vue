@@ -24,17 +24,30 @@ div
 
     //- Banner
     //- -------------------------------------------------------------------------------------------
-    section(class="flex flex-wrap gap-4 justify-between mx-auto w-11/12")
+    section(class="flex flex-wrap gap-4 justify-between mx-auto relative w-11/12")
         //- Sort by
         //- ---------------------------------------------------------------------------------------
-        aside(class="border-2 border-gray-100 cursor-pointer flex gap-4 h-16 items-center justify-between px-4 rounded-md text-gray-500 w-full xl:w-auto lg:h-12")
-            p() Popular
+        fieldset(class="w-full xl:w-auto")
+            aside(
+                @click="openSort = true"
+                class="border-2 border-gray-100 cursor-pointer flex h-16 items-center justify-between mb-2 px-4 rounded-md text-gray-500 xl:w-48 lg:h-12"
+            )
+                p() {{ selectedSortOpt }}
 
-            sort-icon()
+                sort-icon()
+
+            //- Sort by popup modal
+            //- ---------------------------------------------------------------------------------------
+            SortBy(
+                v-if="openSort"
+                @change-sort-opt="handleSortChange"
+                @close-sort-modal="openSort = false"
+                :selectedSortOpt="selectedSortOpt"
+            )
 
         //- Tags
         //- ---------------------------------------------------------------------------------------
-        aside(class="grid gap-x-6 gap-y-4 sm:grid-cols-2 w-full lg:grid-cols-4 xl:w-auto")
+        menu(class="grid gap-x-6 gap-y-4 sm:grid-cols-2 w-full lg:grid-cols-4 xl:w-auto")
             a(
                 v-for="(item, index) in articleTags"
                 :href="item.link"
@@ -55,10 +68,15 @@ div
 </template>
 
 <script>
+    // Icons
     // ================================================================================================
     import Search from "../icons/search.vue"
     import Filter from "../icons/filter.vue"
     import Sort from "../icons/sort.vue"
+
+    // Components
+    // ================================================================================================
+    import SortBy from "../../components/modal/popup/sortBy.vue"
 
     // ================================================================================================
     export default {
@@ -66,7 +84,8 @@ div
         components: {
             "search-icon": Search,
             "filter-icon": Filter,
-            "sort-icon": Sort
+            "sort-icon": Sort,
+            SortBy
         },
         data() {
             return {
@@ -84,7 +103,14 @@ div
                         tag: "💧 Light Reads", link: ""
                     }
                 ],
-                searchTerm: ""
+                searchTerm: "",
+                openSort: false,
+                selectedSortOpt: "Popular"
+            }
+        },
+        methods: {
+            handleSortChange(opt) {
+                this.selectedSortOpt = opt;
             }
         }
     }

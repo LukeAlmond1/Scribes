@@ -44,8 +44,8 @@ div(class="absolute bg-white h-full py-6 w-full z-50")
 
 <script>
     // ============================================================================================
-    import Blog from "../icons/blog.vue"
-    import Account from "../icons/account.vue"
+    import Blog from "../../icons/blog.vue"
+    import Account from "../../icons/account.vue"
 
     // ============================================================================================
     export default {
