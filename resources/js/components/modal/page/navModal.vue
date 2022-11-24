@@ -1,9 +1,9 @@
 <template lang="pug">
-div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
-    nav(class="h-full relative")
+div(class="absolute bg-white h-full py-6 w-full z-50")
+    nav(class="h-full mx-auto relative w-11/12")
         //- Nav header
         //- -----------------------------------------------------------------------------------
-        header(class="border-b-2 flex items-center justify-between mb-6 pb-6 px-2")
+        header(class="border-b-2 flex items-center justify-between mb-6 pb-6")
             p(class="font-black font-serif text-2xl") Scribes
 
             svg(
@@ -24,14 +24,14 @@ div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
         ul()
             //- Blogs tab
             //- -----------------------------------------------------------------------------------
-            li(class="bg-gray-50 font-bold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-lg")
+            li(class="bg-gray-50 font-bold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-gray-800 text-lg")
                 blog-icon()
 
                 p() Blogs
 
             //- Account tab
             //- -----------------------------------------------------------------------------------
-            li(class="bg-gray-50 font-bold flex gap-3 items-center px-6 py-4 rounded-md text-lg")
+            li(class="bg-gray-50 font-bold flex gap-3 items-center px-6 py-4 rounded-md text-gray-800 text-lg")
                 account-icon()
 
                 p() Account
@@ -44,8 +44,8 @@ div(class="absolute bg-white h-full py-6 px-6 w-full z-50")
 
 <script>
     // ============================================================================================
-    import Blog from "../icons/blog.vue"
-    import Account from "../icons/account.vue"
+    import Blog from "../../icons/blog.vue"
+    import Account from "../../icons/account.vue"
 
     // ============================================================================================
     export default {
