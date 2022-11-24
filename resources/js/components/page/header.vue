@@ -9,9 +9,15 @@ div
         p(class="font-black font-serif text-2xl text-gray-800") Scribes
 
         ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
-            li(class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-teal-700") Blogs
+            li(
+                :class="{ 'text-teal-700' : pathName === '/blogs' }"
+                class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
+            ) Blogs
 
-            li(class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-teal-700") Account
+            li(
+                :class="{ 'text-teal-700' : pathName === '/account' }"
+                class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
+            ) Account
 
             button(class="bg-teal-700 font-medium py-4 px-6 rounded-md text-white hover:bg-teal-800") Create Blog
 
@@ -39,9 +45,13 @@ div
     export default {
         name: "Header",
         components: { NavModal },
+        mounted() {
+            this.pathName = window.location.pathname;
+        },
         data() {
             return {
-                showModal: false
+                showModal: false,
+                pathName: ""
             }
         }
     }
