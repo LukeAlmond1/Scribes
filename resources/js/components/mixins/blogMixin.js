@@ -76,11 +76,9 @@ export default {
             }
         },
         handleMouseEnter() {
-            console.log("Entering");
             this.isInputHovered = true;
         },
         handleMouseLeave() {
-            console.log("Leaving");
             this.isInputHovered = false;
         }
     }
