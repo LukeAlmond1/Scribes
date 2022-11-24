@@ -43,9 +43,3 @@ nav()
         }
     }
 </script>
-
-<style>
-    .--select {
-        transition: background-color 400ms ease;
-    }
-</style>

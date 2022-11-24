@@ -3,6 +3,7 @@
 import Search from "../icons/search.vue"
 import Filter from "../icons/filter.vue"
 import Sort from "../icons/sort.vue"
+import Loader from "../icons/loader.vue"
 
 // Components
 // ================================================================================================
@@ -21,6 +22,7 @@ export default {
         "search-icon": Search,
         "filter-icon": Filter,
         "sort-icon": Sort,
+        "loader-icon": Loader,
         "ui-tag": Tag,
         "ui-select": Select,
         "ui-popup": PopUp,
