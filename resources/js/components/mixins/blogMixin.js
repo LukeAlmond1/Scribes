@@ -58,7 +58,8 @@ export default {
             openSort: false,
             selectedSortOpt: "Popular",
             openFilter: false,
-            selectedFilterOpt: "None"
+            selectedFilterOpt: "None",
+            isInputHovered: false
         }
     },
     methods: {
@@ -71,6 +72,14 @@ export default {
             } else {
                 this.selectedFilterOpt = opt;
             }
+        },
+        handleMouseEnter() {
+            console.log("Entering");
+            this.isInputHovered = true;
+        },
+        handleMouseLeave() {
+            console.log("Leaving");
+            this.isInputHovered = false;
         }
     }
 }

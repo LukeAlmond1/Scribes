@@ -9,7 +9,7 @@ nav()
             @click="handleSelect(option)"
             :key="index"
             :class="{ 'font-medium text-teal-700': option === selection }"
-            class="border-b-2 border-gray-50 py-3 px-4 text-gray-800 hover:bg-gray-50"
+            class="border-b-2 border-gray-50 py-3 px-4 text-gray-800 hover:bg-gray-50 --select"
         ) {{ option }}
 
 </template>
@@ -43,3 +43,9 @@ nav()
         }
     }
 </script>
+
+<style>
+    .--select {
+        transition: background-color 400ms ease;
+    }
+</style>

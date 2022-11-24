@@ -2,11 +2,21 @@
 div
     //- Cover
     //- -------------------------------------------------------------------------------------------
-    section(class="bg-blog-cover bg-cover flex h-48 items-end justify-center mb-16 w-full")
+    section(
+        :class="{'mb-18' : isInputHovered}"
+        class="bg-blog-cover bg-cover flex h-48 items-end justify-center mb-24 w-full"
+    )
         //- Input field
         //- ---------------------------------------------------------------------------------------
-        aside(class="bg-white border-teal-700 drop-shadow-2xl flex gap-4 h-22 items-center -mb-8 rounded-md w-11/12 xl:w-3/6")
-            aside(class="bg-gray-50 hidden h-full items-center justify-center p-6 rounded-l-md md:flex")
+        aside(
+            @mouseenter="handleMouseEnter"
+            @mouseleave="handleMouseLeave"
+            :class="{ '--input-push-up' : isInputHovered, '--input-push-down' : !isInputHovered }"
+            class="bg-white border-teal-700 drop-shadow-2xl flex gap-4 h-22 items-center -mb-8 rounded-md w-11/12 xl:w-3/6 --input"
+        )
+            aside(
+                class="bg-gray-50 hidden h-full items-center justify-center p-6 rounded-l-md md:flex"
+            )
                 search-icon()
 
             input(
@@ -18,13 +28,14 @@ div
 
     //- Search summary
     //- -------------------------------------------------------------------------------------------
-    section(class="flex flex-col gap-2 items-center justify-center mx-auto mb-8 w-11/12")
-        h1(class="font-bold text-gray-800 text-2xl lg:text-3xl") {{ searchTerm }}
-
-        p(
+    transition()
+        section(
             v-if="searchTerm"
-            class="text-gray-500 text-center lg:text-lg"
-        ) There seems to be 100 blogs for that term
+            class="flex flex-col gap-2 items-center justify-center mx-auto mb-8 w-11/12"
+        )
+                h1(class="font-bold text-gray-800 text-2xl lg:text-3xl") {{ searchTerm }}
+
+                p(class="text-gray-500 text-center lg:text-lg search-result") There seems to be 100 blogs for that term
 
     //- Banner
     //- -------------------------------------------------------------------------------------------
@@ -96,3 +107,26 @@ div
         mixins: [blogMixin]
     }
 </script>
+
+<style>
+    .--input {
+        transition: transform 300ms ease;
+    }
+
+    .--input-push-up {
+        transform: translate(0px, -5px);
+    }
+
+    .--input-push-down {
+        transform: translate(0px, 5px);
+    }
+
+    .v-enter-active,
+    .v-leave-active {
+        transition: opacity 0.5s ease;
+    }
+    .v-enter-from,
+    .v-leave-to {
+    opacity: 0;
+    }
+</style>
