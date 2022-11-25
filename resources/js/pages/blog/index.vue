@@ -12,6 +12,15 @@ div
     // ============================================================================================
     export default {
         name: "Blog",
-        components: { Header, Search }
+        components: { Header, Search },
+        props: {
+            blogs: {
+                default: () => ([]),
+                type: Array
+            },
+        },
+        mounted() {
+            console.log(this.blogs.length);
+        },
     }
 </script>

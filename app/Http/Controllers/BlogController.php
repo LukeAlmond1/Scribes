@@ -2,12 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Inertia\Inertia;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BlogController extends Controller
 {
     public function index() {
-        return inertia::render('blog/index');
+
+        // Fetch all the blogs
+        // ----------------------------------------------------------------------------------------
+        $blogs = Blog::get()->toArray();
+
+        // Inject blogs into view
+        // ----------------------------------------------------------------------------------------
+        return inertia::render('blog/index', [
+            'blogs' => $blogs
+        ]);
     }
 }
