@@ -33,7 +33,7 @@ div(class="article-grid")
 
             p(class="text-sm") •
 
-            p(class="font-medium text-sm text-gray-800") {{ item.mins_to_read }} mins read
+            p(class="font-medium text-sm text-gray-800") {{ item.mins_to_read }} min read
 
         //- Title & Summary
         //---------------------------------------------------------------------------------------------
