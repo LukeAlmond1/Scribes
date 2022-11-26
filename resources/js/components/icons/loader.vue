@@ -4,7 +4,7 @@ div
         svg(
             v-if="isSearching"
             aria-hidden="true"
-            class="mr-8 w-6 h-6 text-gray-200 animate-spin fill-teal-700"
+            class="mr-8 w-6 h-6 text-gray-200 animate-spin fill-blue-700"
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

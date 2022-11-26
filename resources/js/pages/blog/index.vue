@@ -2,25 +2,27 @@
 div
     Header()
     Search()
+    Articles(
+        v-if="blogs"
+        :articles="blogs"
+    )
 </template>
 
 <script>
     // ============================================================================================
     import Header from "../../components/page/header.vue"
     import Search from "../../components/blog/search.vue"
+    import Articles from "../../components/blog/articles.vue"
 
     // ============================================================================================
     export default {
         name: "Blog",
-        components: { Header, Search },
+        components: { Header, Search, Articles },
         props: {
             blogs: {
                 default: () => ([]),
                 type: Array
             },
-        },
-        mounted() {
-            console.log(this.blogs.length);
-        },
+        }
     }
 </script>
