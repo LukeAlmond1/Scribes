@@ -11,9 +11,16 @@ div(class="article-grid")
         //---------------------------------------------------------------------------------------------
         div(class="article-image")
 
+        //- Analytics section
+        //---------------------------------------------------------------------------------------------
+        section(class="flex gap-4 mb-4")
+            p(class="metric") {{ new Intl.NumberFormat().format(item.views) }} 👁️
+
+            p(class="metric") {{ new Intl.NumberFormat().format(item.shares) }} 🔄
+
         //- Author section
         //---------------------------------------------------------------------------------------------
-        header(class="author-section")
+        section(class="author-section")
             span(class="bg-gray-100 h-10 rounded-full w-10")
 
             p(class="text-gray-800") Jack Adams
@@ -31,16 +38,16 @@ div(class="article-grid")
 
         //- Title & Summary
         //---------------------------------------------------------------------------------------------
-        h1(class="title-summary-section") {{ item.title }}
+        h1(class="font-semibold mb-2 text-xl text-gray-800") {{ item.title }}
 
         p(class="mb-6 text-sm text-gray-400") {{ item.summary }}
 
         ui-tag(
             :value="item.topic"
-            class="mb-4"
+            class="text-base mb-4"
         )
 
-        button(class="read-button") Read
+        button(class="read-button") Read ->
 
 </template>
 
@@ -54,10 +61,10 @@ div(class="article-grid")
         name: "Articles",
         components: { 'ui-tag' : Tag },
         props: {
-        articles: {
-            default: () => ([]),
-            type: Array
-        },
+            articles: {
+                default: () => ([]),
+                type: Array
+            },
         }
     }
 </script>
@@ -70,36 +77,36 @@ div(class="article-grid")
     /* UI classes*/
     /* --------------------------------------------------------------------------------------------- */
     @layer components {
-        .verified {
-            @apply bg-blue-100 p-2 right-0 rounded-md text-sm text-blue-600 text-center w-full sm:w-auto sm:text-start sm:absolute;
-        }
-
-        .author-section {
-            @apply border-b-2 border-gray-100 font-medium flex flex-wrap gap-4 items-center relative mb-6 pb-3;
-        }
-
-        .date-time-section {
-            @apply flex gap-2 items-center mb-2;
-        }
-
-        .title-summary-section {
-            @apply font-semibold mb-2 text-xl text-gray-800;
-        }
-
-        .read-button {
-            @apply bg-teal-700 font-medium py-4 px-6 rounded-md text-white w-full hover:bg-teal-800;
-        }
-
-        .article-image {
-            @apply bg-gray-100 h-56 mb-4 w-full;
-        }
-
         .article-grid {
             @apply grid gap-4 mx-auto w-11/12 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
         }
 
         .article-card {
             @apply bg-white cursor-pointer drop-shadow flex flex-col p-6 relative rounded-md;
+        }
+
+        .author-section {
+            @apply border-b-2 border-gray-100 font-medium flex flex-wrap gap-4 items-center relative mb-6 pb-3;
+        }
+
+        .article-image {
+            @apply bg-gray-100 h-56 mb-4 w-full;
+        }
+
+        .date-time-section {
+            @apply flex gap-2 items-center mb-2;
+        }
+
+        .metric {
+            @apply font-medium text-teal-800 text-sm;
+        }
+
+        .read-button {
+            @apply bg-teal-700 font-medium py-4 px-6 rounded-md text-white w-full hover:bg-teal-800;
+        }
+
+        .verified {
+            @apply absolute bg-blue-100 p-2 right-0 rounded-md text-sm text-blue-600;
         }
     }
 </style>
