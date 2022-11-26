@@ -10,16 +10,16 @@ div
 
     ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
       li(
-        :class="{ 'text-teal-800' : pathName === '/blogs' }"
+        :class="{ 'text-gray-800' : pathName === '/blogs' }"
         class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
       ) Blogs
 
       li(
-        :class="{ 'text-teal-800' : pathName === '/account' }"
+        :class="{ 'text-gray-800' : pathName === '/account' }"
         class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
       ) Account
 
-      button(class="bg-teal-700 font-medium py-4 px-6 rounded-md text-white hover:bg-teal-800") Create Blog
+      button(class="bg-blue-700 font-medium py-4 px-6 rounded-md text-white hover:bg-blue-800") Create Blog
 
     svg(
       @click="showModal = true"

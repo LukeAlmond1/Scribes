@@ -8,7 +8,7 @@ nav()
       v-for="(option, index) in data"
       @click="handleSelect(option)"
       :key="index"
-      :class="{ 'font-medium text-teal-800': option === selection }"
+      :class="{ 'font-medium text-gray-800': option === selection }"
       class="border-b-2 border-gray-50 py-3 px-4 text-gray-800 hover:bg-gray-50 --select"
     ) {{ option }}
 

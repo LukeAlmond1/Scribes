@@ -10,13 +10,12 @@ div(class="article-grid")
         //- Article image
         //---------------------------------------------------------------------------------------------
         div(class="article-image")
+            section(class="metric-section")
+                p(class="metric") {{ new Intl.NumberFormat().format(item.views) }} 👁️
 
-        //- Analytics section
-        //---------------------------------------------------------------------------------------------
-        section(class="flex gap-4 mb-4")
-            p(class="metric") {{ new Intl.NumberFormat().format(item.views) }} 👁️
+                div(class="bg-gray-600 w-0.5")
 
-            p(class="metric") {{ new Intl.NumberFormat().format(item.shares) }} 🔄
+                p(class="metric") {{ new Intl.NumberFormat().format(item.shares) }} 🔄
 
         //- Author section
         //---------------------------------------------------------------------------------------------
@@ -30,7 +29,7 @@ div(class="article-grid")
         //- Dates & Times
         //---------------------------------------------------------------------------------------------
         section(class="date-time-section")
-            time(class="font-medium text-sm text-teal-800") {{ item.published }}
+            time(class="font-medium text-sm text-gray-800") {{ item.published }}
 
             p(class="text-sm") •
 
@@ -90,7 +89,7 @@ div(class="article-grid")
         }
 
         .article-image {
-            @apply bg-gray-100 h-56 mb-4 w-full;
+            @apply bg-gray-100 h-56 mb-4 rounded-md relative w-full;
         }
 
         .date-time-section {
@@ -98,11 +97,15 @@ div(class="article-grid")
         }
 
         .metric {
-            @apply font-medium text-teal-800 text-sm;
+            @apply font-medium text-white text-sm;
+        }
+
+        .metric-section {
+            @apply absolute bottom-0 bg-gray-800 flex justify-between px-4 py-2 rounded-b-md w-1/2 w-full;
         }
 
         .read-button {
-            @apply bg-teal-700 font-medium py-4 px-6 rounded-md text-white w-full hover:bg-teal-800;
+            @apply bg-gray-800 font-medium py-4 px-6 rounded-md text-white w-full hover:bg-gray-900;
         }
 
         .verified {
