@@ -9,7 +9,16 @@ div(class="article-grid")
     )
         //- Article image
         //---------------------------------------------------------------------------------------------
-        div(class="article-image")
+        div(
+            class="article-image"
+        )
+            img(
+                class="h-full w-full"
+                :src="item.cover"
+            )
+
+            //- Metrics
+            //---------------------------------------------------------------------------------------------
             section(class="metric-section")
                 p(class="metric") {{ new Intl.NumberFormat().format(item.views) }} 👁️
 
@@ -77,7 +86,7 @@ div(class="article-grid")
     /* --------------------------------------------------------------------------------------------- */
     @layer components {
         .article-grid {
-            @apply grid gap-4 mx-auto w-11/12 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
+            @apply grid gap-4 mx-auto w-11/12 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4;
         }
 
         .article-card {
@@ -89,7 +98,7 @@ div(class="article-grid")
         }
 
         .article-image {
-            @apply bg-gray-100 h-56 mb-4 rounded-md relative w-full;
+            @apply bg-gray-100 h-56 mb-4 overflow-hidden rounded-md relative w-full;
         }
 
         .date-time-section {

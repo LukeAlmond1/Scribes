@@ -22,26 +22,29 @@ class BlogFactory extends Factory
         $randomTitleLength = rand(1, 4);
 
         $topics = [
-            "🏋🏼‍♀️ Fitness",
-            "🏛️ Philosophy",
-            "☯️ Spirituality",
-            "⚽ Sports",
-            "⚖️ Politics",
-            "🌱 Self Development",
-            "🎵 Music",
-            "🏦 Finance"
+            ['topic' => '🏋🏼‍♀️ Fitness', 'cover' => 'sports'],
+            ['topic' => '🏛️ Philosophy', 'cover' => 'nature'],
+            ['topic' => '☯️ Spirituality', 'cover' => 'nature'],
+            ['topic' => '⚽ Sports', 'cover' => 'sports'],
+            ['topic' => '⚖️ Politics', 'cover' => 'business'],
+            ['topic' => '🌱 Self Development', 'cover' => 'people'],
+            ['topic' => '🎵 Music', 'cover' => 'nightlife'],
+            ['topic' => '🏦 Finance', 'cover' => 'business']
         ];
 
+        $randomTopic = $topics[rand(0, count($topics) - 1)];
+
         return [
-            "title" => $this->faker->sentence($randomTitleLength),
-            "summary" => $this->faker->sentence($randomSummaryLength),
-            "body" => $this->faker->paragraph($randomParaLength),
-            "mins_to_read" => $randomParaLength * 0.5,
-            "author" => rand(1, 100),
-            "views" => $views,
-            "shares" => $views * rand(10, 60) / 100,
-            "topic" => $topics[rand(0, count($topics) - 1)],
-            "published" => $this->faker->dateTimeThisYear('+2 months')
+            'title' => $this->faker->sentence($randomTitleLength),
+            'cover' => 'https://loremflickr.com/640/480/' . $randomTopic["cover"],
+            'summary' => $this->faker->sentence($randomSummaryLength),
+            'body' => $this->faker->paragraph($randomParaLength),
+            'mins_to_read' => $randomParaLength * 0.5,
+            'author' => rand(1, 100),
+            'views' => $views,
+            'shares' => $views * rand(10, 60) / 100,
+            'topic' => $randomTopic["topic"],
+            'published' => $this->faker->dateTimeThisYear('+2 months')
         ];
     }
 }
