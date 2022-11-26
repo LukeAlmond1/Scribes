@@ -36,7 +36,7 @@ class BlogFactory extends Factory
 
         return [
             'title' => $this->faker->sentence($randomTitleLength),
-            'cover' => 'https://loremflickr.com/640/480/' . $randomTopic["cover"],
+            'cover' => 'https://loremflickr.com/640/480/' . $randomTopic["cover"] . '?random=' . rand(1, 100),
             'summary' => $this->faker->sentence($randomSummaryLength),
             'body' => $this->faker->paragraph($randomParaLength),
             'mins_to_read' => $randomParaLength * 0.5,
