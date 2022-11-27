@@ -10,12 +10,12 @@ div
 
     ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
       li(
-        :class="{ 'text-gray-800' : pathName === '/blogs' }"
+        :class="{ 'text-blue-700' : pathName === '/blogs' }"
         class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
       ) Blogs
 
       li(
-        :class="{ 'text-gray-800' : pathName === '/account' }"
+        :class="{ 'text-blue-700' : pathName === '/account' }"
         class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
       ) Account
 
