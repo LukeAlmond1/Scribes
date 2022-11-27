@@ -40,7 +40,7 @@ class BlogFactory extends Factory
             'summary' => $this->faker->sentence($randomSummaryLength),
             'body' => $this->faker->paragraph($randomParaLength),
             'mins_to_read' => $randomParaLength * 0.5,
-            'author' => rand(1, 100),
+            'author_id' => rand(1, 100),
             'views' => $views,
             'shares' => $views * rand(10, 60) / 100,
             'topic' => $randomTopic["topic"],

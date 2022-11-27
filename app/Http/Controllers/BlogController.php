@@ -12,7 +12,7 @@ class BlogController extends Controller
 
         // Fetch all the blogs
         // ----------------------------------------------------------------------------------------
-        $blogs = Blog::get()->toArray();
+        $blogs = Blog::all();
 
         // Inject blogs into view
         // ----------------------------------------------------------------------------------------
