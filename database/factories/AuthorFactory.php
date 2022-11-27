@@ -20,7 +20,7 @@ class AuthorFactory extends Factory
             'firstName' => $this->faker->firstName(),
             'lastName' => $this->faker->lastName(),
             'verified' => $this->faker->boolean(),
-            'avatar' => 'https://i.pravatar.cc/100'
+            'avatar' => 'https://i.pravatar.cc/150?u=' . $this->faker->unique->uuid()
         ];
     }
 }

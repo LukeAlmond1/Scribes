@@ -12,7 +12,9 @@ class BlogController extends Controller
 
         // Fetch all the blogs
         // ----------------------------------------------------------------------------------------
-        $blogs = Blog::all();
+        $blogs = Blog::with('author')->get();
+
+        // dd($blogs[0]);
 
         // Inject blogs into view
         // ----------------------------------------------------------------------------------------

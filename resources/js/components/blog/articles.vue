@@ -29,9 +29,12 @@ div(class="article-grid")
         //- Author section
         //---------------------------------------------------------------------------------------------
         section(class="author-section")
-            span(class="bg-gray-100 h-10 rounded-full w-10")
+            img(
+                :src="item.author.avatar"
+                class="h-10 rounded-full w-10"
+            )
 
-            p(class="text-gray-800") Jack Adams
+            p(class="text-gray-800") {{ item.author.firstName + " " + item.author.lastName }}
 
             p(class="verified") Verified
 
