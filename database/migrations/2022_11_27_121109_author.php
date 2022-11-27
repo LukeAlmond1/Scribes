@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\Author;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -14,18 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('blogs', function (Blueprint $table) {
+        Schema::create('authors', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->text('cover');
-            $table->text('summary');
-            $table->integer('mins_to_read');
-            $table->text('body');
-            $table->integer('author_id');
-            $table->integer('views');
-            $table->integer('shares');
-            $table->string('topic');
-            $table->date('published');
+            $table->string('firstName');
+            $table->string('lastName');
+            $table->boolean('verified');
+            $table->text('avatar');
             $table->timestamp('created_at')->nullable();
             $table->timestamp('updated_at')->nullable();
         });

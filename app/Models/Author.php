@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Author extends Model
 {
     use HasFactory;
 
-    // Each blog belongs to an author
+    // An author has many blogs
     // --------------------------------------------------------------------------------------------
-    public function author()
+    public function blogs()
     {
-        return $this->belongsTo(Author::class);
+        return $this->hasMany(Blog::class);
     }
 }

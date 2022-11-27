@@ -29,11 +29,16 @@ div(class="article-grid")
         //- Author section
         //---------------------------------------------------------------------------------------------
         section(class="author-section")
-            span(class="bg-gray-100 h-10 rounded-full w-10")
+            img(
+                :src="item.author.avatar"
+                class="h-10 rounded-full w-10"
+            )
 
-            p(class="text-gray-800") Jack Adams
+            p(class="text-gray-800") {{ item.author.firstName + " " + item.author.lastName }}
 
-            p(class="verified") Verified
+            p(
+                :class="{'verified' : item.author.verified, 'un-verified' : !item.author.verified}"
+            ) {{ item.author.verified ? 'verified' : "un-verified" }}
 
         //- Dates & Times
         //---------------------------------------------------------------------------------------------
@@ -115,6 +120,10 @@ div(class="article-grid")
 
         .read-button {
             @apply bg-gray-800 font-medium py-4 px-6 rounded-md text-white w-full hover:bg-gray-900;
+        }
+
+        .un-verified {
+            @apply absolute bg-gray-100 p-2 right-0 rounded-md text-sm text-gray-600;
         }
 
         .verified {
