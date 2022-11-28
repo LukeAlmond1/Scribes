@@ -81,5 +81,11 @@ export default {
         handleMouseLeave() {
             this.isInputHovered = false;
         }
+    },
+    watch: {
+        searchTerm(val) {
+            axios.post(`/blogs/search/${val}`)
+                .then((res) => console.log(res.data))
+        }
     }
 }
