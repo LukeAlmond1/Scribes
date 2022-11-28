@@ -29,6 +29,12 @@ export default {
         SortBy,
         FilterBy
     },
+    props: {
+        numberOfBlogs: {
+            default: 0,
+            type: Number
+        }
+    },
     data() {
         return {
             articleTags: [
