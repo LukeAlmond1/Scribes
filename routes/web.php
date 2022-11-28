@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 // Blog routes
 // ------------------------------------------------------------------------------------------------
 Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'index']);
+Route::post('blogs/search/{query}', [\App\Http\Controllers\BlogController::class, 'search']);
