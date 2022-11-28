@@ -3,6 +3,7 @@ div
     Header()
     Search(
         @searched-blogs="handleSearchedBlogs"
+        :numberOfBlogs="blogData.length"
     )
     Articles(
         v-if="blogData"

@@ -10,8 +10,8 @@ div(class="mb-12")
         aside(
             @mouseenter="handleMouseEnter"
             @mouseleave="handleMouseLeave"
-            :class="{ '--input-push-up' : isInputHovered, '--input-push-down' : !isInputHovered }"
-            class="bg-white border-teal-700 drop-shadow-xl flex gap-4 h-22 items-center -mb-8 rounded-md w-11/12 xl:w-3/6 --input"
+            :class="{ '--xy-push-up' : isInputHovered, '--xy-push-down' : !isInputHovered }"
+            class="bg-white border-teal-700 drop-shadow-xl flex gap-4 h-22 items-center -mb-8 rounded-md w-11/12 xl:w-3/6 --xy"
         )
             aside(
                 class="bg-gray-50 hidden h-full items-center justify-center p-6 rounded-l-md md:flex"
@@ -36,7 +36,7 @@ div(class="mb-12")
         )
                 h1(class="font-bold text-gray-800 text-2xl lg:text-3xl") {{ searchTerm }}
 
-                p(class="text-gray-500 text-center lg:text-lg") There seems to be 100 blogs for that term
+                p(class="text-gray-500 text-center lg:text-lg") There seems to be {{ numberOfBlogs }} blogs for that term
 
     //- Banner
     //- -------------------------------------------------------------------------------------------
