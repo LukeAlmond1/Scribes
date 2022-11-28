@@ -84,8 +84,8 @@ export default {
     },
     watch: {
         searchTerm(val) {
-            axios.post(`/blogs/search/${val}`)
-                .then((res) => console.log(res.data))
+            axios.post(`/blogs/search/${val || '%'}`)
+                .then((res) => this.$emit("searched-blogs", res.data))
         }
     }
 }

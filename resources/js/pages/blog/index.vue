@@ -1,10 +1,12 @@
 <template lang="pug">
 div
     Header()
-    Search()
+    Search(
+        @searched-blogs="handleSearchedBlogs"
+    )
     Articles(
-        v-if="blogs"
-        :articles="blogs"
+        v-if="blogData"
+        :articles="blogData"
     )
 </template>
 
@@ -18,11 +20,24 @@ div
     export default {
         name: "Blog",
         components: { Header, Search, Articles },
+        data() {
+            return {
+                blogData: []
+            }
+        },
+        mounted() {
+            this.blogData = this.blogs;
+        },
         props: {
             blogs: {
                 default: () => ([]),
                 type: Array
             },
+        },
+        methods: {
+            handleSearchedBlogs(data) {
+                this.blogData = data;
+            }
         }
     }
 </script>
