@@ -73,30 +73,14 @@ div()
 </template>
 
 <script>
-    // UI
+    // Mixins
     // ================================================================================================
-    import Tag from "../../components/ui/tag.vue"
+    import articleMixin from "../../components/mixins/articleMixin.js"
 
     // ================================================================================================
     export default {
         name: "Articles",
-        components: { 'ui-tag' : Tag },
-        props: {
-            articles: {
-                default: () => ([]),
-                type: Array
-            },
-        },
-        data() {
-            return {
-                isCardHover: null
-            }
-        },
-        watch: {
-            isCardHover() {
-                console.log(this.isCardHover);
-            }
-        }
+        mixins: [articleMixin]
     }
 </script>
 
