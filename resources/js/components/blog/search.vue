@@ -3,7 +3,7 @@ div(class="mb-12")
     //- Cover
     //- -------------------------------------------------------------------------------------------
     section(
-        class="bg-blog-cover bg-cover flex h-48 items-end justify-center mb-20 w-full"
+        class="background-cover"
     )
         //- Input field
         //- ---------------------------------------------------------------------------------------
@@ -11,17 +11,17 @@ div(class="mb-12")
             @mouseenter="handleMouseEnter"
             @mouseleave="handleMouseLeave"
             :class="{ '--xy-push-up' : isInputHovered, '--xy-push-down' : !isInputHovered }"
-            class="bg-white border-teal-700 drop-shadow-xl flex gap-4 h-22 items-center -mb-8 rounded-md w-11/12 xl:w-3/6 --xy"
+            class="search-container --xy"
         )
             aside(
-                class="bg-gray-50 hidden h-full items-center justify-center p-6 rounded-l-md md:flex"
+                class="search-box"
             )
                 search-icon()
 
             input(
                 v-model="searchTerm"
                 spellcheck="false"
-                class="p-6 rounded-md outline-none text-gray-800 w-11/12 placeholder:text-gray-400 md:p-0"
+                class="search-input"
                 placeholder="Search for a blog..."
             )
 
@@ -32,15 +32,15 @@ div(class="mb-12")
     transition(name="--fade")
         section(
             v-if="searchTerm"
-            class="flex flex-col gap-2 items-center justify-center mx-auto mb-8 w-11/12"
+            class="results-container"
         )
-                h1(class="font-bold text-gray-800 text-2xl lg:text-3xl") {{ searchTerm }}
+                h1(class="results-term") {{ searchTerm }}
 
-                p(class="text-gray-500 text-center lg:text-lg") There seems to be {{ numberOfBlogs }} blogs for that term
+                p(class="results-text") There seems to be {{ numberOfBlogs }} blogs for that term
 
     //- Banner
     //- -------------------------------------------------------------------------------------------
-    section(class="flex flex-wrap gap-4 justify-between mx-auto relative w-11/12")
+    section(class="banner")
         //- Sort by
         //- ---------------------------------------------------------------------------------------
         fieldset(class="w-full xl:w-auto")
@@ -65,7 +65,7 @@ div(class="mb-12")
 
         //- Tags
         //- ---------------------------------------------------------------------------------------
-        menu(class="grid gap-x-6 gap-y-4 sm:grid-cols-2 w-full lg:grid-cols-4 xl:w-auto")
+        menu(class="tag-container")
             ui-tag(
                 v-for="(item, index) in articleTags"
                 :href="item.link"
@@ -103,6 +103,10 @@ div(class="mb-12")
     // Mixins
     // ================================================================================================
     import blogMixin from "../../components/mixins/blogMixin.js"
+
+    // CSS
+    // ================================================================================================
+    import "../../../css/search.css"
 
     // ================================================================================================
     export default {
