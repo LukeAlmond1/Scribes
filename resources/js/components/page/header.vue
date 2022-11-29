@@ -1,58 +1,63 @@
 <template lang="pug">
 div
-  NavModal(
-    @modal-change="showModal = false"
-    v-if="showModal"
-  )
-
-  nav(class="bg-white flex items-center justify-between mx-auto py-6 w-11/12")
-    p(class="font-black font-serif text-2xl text-gray-800") Scribes
-
-    ul(class="gap-4 hidden justify-end w-1/2 lg:flex")
-      li(
-        :class="{ 'text-blue-700' : pathName === '/blogs' }"
-        class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
-      ) Blogs
-
-      li(
-        :class="{ 'text-blue-700' : pathName === '/account' }"
-        class="cursor-pointer font-medium py-4 px-6 rounded-md text-gray-800 hover:text-gray-400"
-      ) Account
-
-      button(class="bg-blue-700 font-medium py-4 px-6 rounded-md text-white hover:bg-blue-800") Create Blog
-
-    svg(
-      @click="showModal = true"
-      class="w-6 h-6 lg:hidden"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="black"
+    NavModal(
+        @modal-change="showModal = false"
+        v-if="showModal"
     )
-      path(
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M4 6h16M4 12h16M4 18h16"
-      )
+
+    nav(class="header-nav")
+        p(class="logo") Scribes
+
+        ul(class="header-list")
+            li(
+                :class="{ 'text-blue-700' : pathName === '/blogs' }"
+                class="header-link"
+            ) Blogs
+
+            li(
+                :class="{ 'text-blue-700' : pathName === '/account' }"
+                class="header-link"
+            ) Account
+
+            button(class="header-create-button") Create Blog
+
+        svg(
+            @click="showModal = true"
+            class="w-6 h-6 lg:hidden"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="black"
+        )
+            path(
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+            )
 
 </template>
 
 <script>
-  // ============================================================================================
-  import NavModal from "../modal/page/navModal.vue"
+    // CSS
+    // ================================================================================================
+    import "../../../css/components/header.css"
 
-  export default {
-    name: "Header",
-    components: { NavModal },
-    mounted() {
-      this.pathName = window.location.pathname;
-    },
-    data() {
-      return {
-        showModal: false,
-        pathName: ""
-      }
+    // Components
+    // ============================================================================================
+    import NavModal from "../modal/page/navModal.vue"
+
+    export default {
+        name: "Header",
+        components: { NavModal },
+        mounted() {
+            this.pathName = window.location.pathname;
+        },
+        data() {
+            return {
+                showModal: false,
+                pathName: ""
+            }
+        }
     }
-  }
 </script>

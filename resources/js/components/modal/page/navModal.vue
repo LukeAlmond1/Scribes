@@ -6,7 +6,7 @@ div(class="modal-container")
         header(class="modal-header")
             p(class="logo") Scribes
 
-            close-modal()
+            close-modal(@click="$emit('modal-change')")
 
         ul()
             //- Blogs tab
@@ -25,7 +25,7 @@ div(class="modal-container")
 
         //- Create blog
         //- -----------------------------------------------------------------------------------
-        button(class="create-button") Create Blog
+        button(class="modal-create-button") Create Blog
 
 </template>
 
