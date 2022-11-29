@@ -1,0 +1,11 @@
+/* Tailwind imports*/
+/* --------------------------------------------------------------------------------------------- */
+@tailwind components;
+
+/* UI classes*/
+/* --------------------------------------------------------------------------------------------- */
+@layer components {
+    .select-box {
+        @apply border-2 border-gray-100 cursor-pointer flex h-16 items-center justify-between mb-2 px-4 rounded-md text-gray-500 xl:w-48 lg:h-12;
+    }
+}

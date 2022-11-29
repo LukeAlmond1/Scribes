@@ -1,0 +1,11 @@
+/* Tailwind imports*/
+/* --------------------------------------------------------------------------------------------- */
+@tailwind components;
+
+/* UI classes*/
+/* --------------------------------------------------------------------------------------------- */
+@layer components {
+    .link {
+        @apply bg-gray-50 border-2 border-gray-50 font-semibold flex h-16 items-center justify-center px-4 rounded-md text-gray-800 lg:h-12;
+    }
+}

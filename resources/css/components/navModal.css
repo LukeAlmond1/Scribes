@@ -1,0 +1,31 @@
+/* Tailwind imports*/
+/* --------------------------------------------------------------------------------------------- */
+@tailwind components;
+
+/* UI classes*/
+/* --------------------------------------------------------------------------------------------- */
+@layer components {
+    .modal-container {
+        @apply fixed bg-white h-full py-6 w-full z-50;
+    }
+
+    .modal-nav {
+        @apply h-full mx-auto relative w-11/12;
+    }
+
+    .modal-header {
+        @apply border-b-2 flex items-center justify-between mb-6 pb-6;
+    }
+
+    .modal-nav-link {
+        @apply bg-gray-50 font-bold flex gap-3 items-center mb-4 px-6 py-4 rounded-md text-gray-800 text-lg;
+    }
+
+    .create-button {
+        @apply absolute bottom-0 bg-blue-700 font-bold py-6 rounded-md text-white w-full hover:bg-blue-800;
+    }
+
+    .logo {
+        @apply font-black font-serif text-2xl;
+    }
+}
