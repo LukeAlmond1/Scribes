@@ -1,0 +1,43 @@
+/* Tailwind imports*/
+/* --------------------------------------------------------------------------------------------- */
+@tailwind components;
+
+/* UI classes*/
+/* --------------------------------------------------------------------------------------------- */
+@layer components {
+    .banner {
+        @apply flex flex-wrap gap-4 justify-between mx-auto relative w-11/12;
+    }
+
+    .background-cover {
+        @apply bg-blog-cover bg-cover flex h-48 items-end justify-center mb-20 w-full;
+    }
+
+    .results-container {
+        @apply flex flex-col gap-2 items-center justify-center mx-auto mb-8 w-11/12;
+    }
+
+    .results-term {
+        @apply font-bold text-gray-800 text-2xl lg:text-3xl;
+    }
+
+    .results-text {
+        @apply text-gray-500 text-center lg:text-lg;
+    }
+
+    .search-input {
+        @apply p-6 rounded-md outline-none text-gray-800 w-11/12 placeholder:text-gray-400 md:p-0;
+    }
+
+    .search-container {
+        @apply bg-white border-teal-700 drop-shadow-xl flex gap-4 items-center -mb-8 rounded-md w-11/12 xl:w-3/6;
+    }
+
+    .search-box {
+        @apply bg-gray-50 hidden h-full items-center justify-center p-6 rounded-l-md md:flex;
+    }
+
+    .tag-container {
+        @apply grid gap-x-6 gap-y-4 sm:grid-cols-2 w-full lg:grid-cols-4 xl:w-auto;
+    }
+}

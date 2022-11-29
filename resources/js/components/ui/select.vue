@@ -1,7 +1,7 @@
 <template lang="pug">
 aside(
     @click="$emit('open-select-modal')"
-    class="border-2 border-gray-100 cursor-pointer flex h-16 items-center justify-between mb-2 px-4 rounded-md text-gray-500 xl:w-48 lg:h-12"
+    class="select-box"
 )
     p() {{ selection }}
 
@@ -10,6 +10,10 @@ aside(
 </template>
 
 <script>
+    // CSS
+    // ================================================================================================
+    import "../../../css/ui/select.css"
+
     // ================================================================================================
     export default {
         name: "Select",

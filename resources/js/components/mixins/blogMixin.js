@@ -5,11 +5,6 @@ import Filter from "../icons/filter.vue"
 import Sort from "../icons/sort.vue"
 import Loader from "../icons/loader.vue"
 
-// Components
-// ================================================================================================
-import SortBy from "../../components/modal/popup/sortBy.vue"
-import FilterBy from "../../components/modal/popup/filterBy.vue"
-
 // UI
 // ================================================================================================
 import Tag from "../../components/ui/tag.vue"
@@ -25,9 +20,7 @@ export default {
         "loader-icon": Loader,
         "ui-tag": Tag,
         "ui-select": Select,
-        "ui-popup": PopUp,
-        SortBy,
-        FilterBy
+        "ui-popup": PopUp
     },
     props: {
         numberOfBlogs: {

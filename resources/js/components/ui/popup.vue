@@ -1,45 +1,31 @@
 <template lang="pug">
 nav()
-  ul(
-    v-if="data"
-    class="bg-white border-2 border-gray-50 cursor-pointer flex flex-col overflow-hidden py-2 rounded-md lg:drop-shadow lg:border-none"
-  )
-    li(
-      v-for="(option, index) in data"
-      @click="handleSelect(option)"
-      :key="index"
-      :class="{ 'font-medium text-gray-800': option === selection }"
-      class="border-b-2 border-gray-50 py-3 px-4 text-gray-800 hover:bg-gray-50 --select"
-    ) {{ option }}
+    ul(
+        v-if="data"
+        class="list-container"
+    )
+        li(
+            v-for="(option, index) in data"
+            @click="handleSelect(option)"
+            :key="index"
+            :class="{ 'font-medium text-gray-800': option === selection }"
+            class="list-item --select"
+        ) {{ option }}
 
 </template>
 
 <script>
-  // ================================================================================================
-  export default {
-    name: "PopUp",
-    props: {
-      data: {
-        default: () => ([]),
-        type: Array
-      },
-      type: {
-        default: "",
-        type: String
-      },
-      selection: {
-        default: "",
-        type: String
-      }
-    },
-    methods: {
-      handleSelect(opt) {
-        this.$emit(`change-${this.type}`, opt);
+    // Mixins
+    // ================================================================================================
+    import popupMixin from "../../components/mixins/popupMixin.js"
 
-        setTimeout(() => {
-          this.$emit(`close-${this.type}`);
-        }, 500);
-      }
+    // CSS
+    // ================================================================================================
+    import "../../../css/ui/popup.css"
+
+    // ================================================================================================
+    export default {
+        name: "PopUp",
+        mixins: [popupMixin]
     }
-  }
 </script>

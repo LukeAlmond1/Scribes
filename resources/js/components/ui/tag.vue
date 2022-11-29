@@ -1,6 +1,6 @@
 <template lang="pug">
 a(
-    class="bg-gray-50 border-2 border-gray-50 font-semibold flex h-16 items-center justify-center px-4 rounded-md text-gray-800 lg:h-12"
+    class="link"
     rel="noopener noreferrer nofollow"
     target="_blank"
 ) {{ value }}
@@ -8,6 +8,10 @@ a(
 </template>
 
 <script>
+    // CSS
+    // ================================================================================================
+    import "../../../css/ui/tag.css"
+
     // ================================================================================================
     export default {
         name: "Tag",
