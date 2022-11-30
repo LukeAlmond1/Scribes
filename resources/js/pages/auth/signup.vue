@@ -67,7 +67,26 @@ div(class="auth-alignment")
             //- -----------------------------------------------------------------------------------
             button(class="auth-submit-button") Signup
 
-            //- Redirect link 
+            //- Divider
+            //- -----------------------------------------------------------------------------------
+            aside(class="grid grid-cols-7 items-center w-full")
+                span(class="bg-gray-100 col-span-3 h-1")
+
+                p(class="mx-auto text-gray-400") or
+
+                span(class="bg-gray-100 col-span-3 h-1")
+
+            //- 0Auth
+            //- -----------------------------------------------------------------------------------
+            aside(class="auth-google-button")
+                img(
+                    class="w-6"
+                    src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+                )
+
+                p() Continue with Google
+
+            //- Redirect link
             //- -----------------------------------------------------------------------------------
             p(class="text-center text-gray-400") Already have an account?{{  " " }}
                 a(class="auth-link") Login here
