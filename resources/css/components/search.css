@@ -30,11 +30,11 @@
     }
 
     .search-container {
-        @apply bg-white border-teal-700 drop-shadow-xl flex gap-4 items-center -mb-8 rounded-md w-11/12 xl:w-3/6;
+        @apply bg-white border-teal-700 drop-shadow-xl flex gap-6 items-center -mb-8 rounded-md w-11/12 xl:w-3/6;
     }
 
     .search-box {
-        @apply bg-gray-50 hidden h-full items-center justify-center p-6 rounded-l-md md:flex;
+        @apply bg-gray-50 border-r-2 border-gray-100 hidden h-full items-center justify-center p-6 rounded-l-md md:flex;
     }
 
     .tag-container {

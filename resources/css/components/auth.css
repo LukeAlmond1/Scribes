@@ -6,14 +6,30 @@
 /* --------------------------------------------------------------------------------------------- */
 @layer components {
     .auth-alignment {
-        @apply absolute flex items-center justify-center inset-0;
+        @apply absolute bg-auth-cover flex items-center justify-center inset-0;
     }
 
     .auth-input-box {
-        @apply border-2 border-gray-100 flex gap-4 rounded-md text-gray-800 w-full;
+        @apply border-2 border-gray-100 flex rounded-md text-gray-800 w-full;
+    }
+
+    .auth-input-field {
+        @apply outline-none pl-4 rounded-md text-gray-800 w-full placeholder:text-gray-400;
     }
 
     .auth-content-box {
-        @apply bg-white drop-shadow h-1/2 py-12 px-10 rounded-md lg:w-1/3;
+        @apply bg-white drop-shadow -mt-24 py-10 px-10 rounded-md w-10/12 2xl:w-1/3;
+    }
+
+    .auth-submit-button {
+        @apply bg-blue-600 font-medium py-4 rounded-md text-white w-full hover:bg-blue-700;
+    }
+
+    .auth-icon-box {
+        @apply bg-gray-50 border-r-2 border-gray-100 hidden h-full items-center justify-center px-5 py-4 rounded-l-md md:flex;
+    }
+
+    .auth-link {
+        @apply cursor-pointer font-medium underline text-blue-700;
     }
 }

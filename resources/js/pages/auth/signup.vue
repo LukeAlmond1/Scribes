@@ -2,10 +2,15 @@
 div(class="auth-alignment")
     //- Content box
     //- -------------------------------------------------------------------------------------------
-    article(class="auth-content-box")
+    article(
+        @mouseenter="enteredBox = true"
+        @mouseleave="enteredBox = false"
+        :class="{ '--xy-push-up' : enteredBox, '--xy-push-down' : !enteredBox }"
+        class="auth-content-box --xy"
+    )
         h1(class="font-bold mb-2 text-2xl text-gray-800") Signup here...
 
-        p(class="mb-6 text-gray-400 text-sm") Enter your details below to sign up, you'll then be asked to verify your email
+        p(class="mb-4 text-gray-400") Enter your details below to sign up, you'll then be asked to verify your email
 
         //- Form
         //- ---------------------------------------------------------------------------------------
@@ -13,11 +18,11 @@ div(class="auth-alignment")
             //- Username
             //- -----------------------------------------------------------------------------------
             aside(class="auth-input-box")
-                span(class="bg-gray-50 hidden h-full items-center justify-center px-5 py-4 rounded-l-md md:flex")
+                span(class="auth-icon-box")
                     username-icon()
 
                 input(
-                    class="outline-none text-gray-800 text-sm w-10/12 placeholder:text-gray-400"
+                    class="auth-input-field"
                     placeholder="Enter your username..."
                     type="text"
                 )
@@ -25,26 +30,47 @@ div(class="auth-alignment")
             //- Email
             //- -----------------------------------------------------------------------------------
             aside(class="auth-input-box")
-                span(class="bg-gray-50 hidden h-full items-center justify-center px-5 py-4 rounded-l-md md:flex")
+                span(class="auth-icon-box")
                     email-icon()
 
                 input(
-                    class="outline-none text-gray-800 text-sm w-10/12 placeholder:text-gray-400"
+                    class="auth-input-field"
                     placeholder="Enter your email address..."
                     type="email"
                 )
 
             //- Password
             //- -----------------------------------------------------------------------------------
-            aside(class="auth-input-box")
-                span(class="bg-gray-50 hidden h-full items-center justify-center px-5 py-4 rounded-l-md md:flex")
+            aside(class="auth-input-box mb-2")
+                span(class="auth-icon-box")
                     password-icon()
 
                 input(
-                    class="outline-none text-gray-800 text-sm w-10/12 placeholder:text-gray-400"
+                    class="auth-input-field"
                     placeholder="Enter your password..."
                     type="password"
                 )
+
+            //- Confirm password
+            //- -----------------------------------------------------------------------------------
+            aside(class="auth-input-box mb-2")
+                span(class="auth-icon-box")
+                    password-icon()
+
+                input(
+                    class="auth-input-field"
+                    placeholder="Confirm your password..."
+                    type="password"
+                )
+
+            //- Button
+            //- -----------------------------------------------------------------------------------
+            button(class="auth-submit-button") Signup
+
+            //- Redirect link 
+            //- -----------------------------------------------------------------------------------
+            p(class="text-center text-gray-400") Already have an account?{{  " " }}
+                a(class="auth-link") Login here
 
 </template>
 
@@ -66,6 +92,11 @@ div(class="auth-alignment")
             "username-icon": Username,
             "password-icon": Password,
             "email-icon": Email
+        },
+        data() {
+            return {
+                enteredBox: false
+            }
         }
     }
 </script>
