@@ -1,0 +1,19 @@
+/* Tailwind imports*/
+/* --------------------------------------------------------------------------------------------- */
+@tailwind components;
+
+/* UI classes*/
+/* --------------------------------------------------------------------------------------------- */
+@layer components {
+    .auth-alignment {
+        @apply absolute flex items-center justify-center inset-0;
+    }
+
+    .auth-input-box {
+        @apply border-2 border-gray-100 flex gap-4 rounded-md text-gray-800 w-full;
+    }
+
+    .auth-content-box {
+        @apply bg-white drop-shadow h-1/2 py-12 px-10 rounded-md lg:w-1/3;
+    }
+}
