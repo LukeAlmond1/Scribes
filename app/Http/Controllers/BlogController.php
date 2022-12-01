@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Return all blogs.
      *
      * @return \Illuminate\Http\Response
      */
@@ -42,9 +42,9 @@ class BlogController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Search for the blog using the query.
      *
-     * @param  int  $id
+     * @param  int  $query
      * @return \Illuminate\Http\Response
      */
     public function show($query)

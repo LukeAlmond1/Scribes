@@ -13,10 +13,15 @@ Route::get('auth/signup', [\App\Http\Controllers\AuthController::class, 'signup'
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
-// Route::middleware('auth')->group(function () {
-    // Blog routes
-    // --------------------------------------------------------------------------------------------
-    Route::resource('blogs', BlogController::class);
-// });
+Route::
+    middleware('auth')
+    ->name('blogs')
+    ->group(
+        function () {
+            // Blog routes
+            // ------------------------------------------------------------------------------------
+            Route::resource('blogs', BlogController::class);
+        }
+    );
 
 require __DIR__.'/auth.php';
