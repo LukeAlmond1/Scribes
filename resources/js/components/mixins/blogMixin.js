@@ -83,7 +83,7 @@ export default {
     },
     watch: {
         searchTerm(val) {
-            axios.post(`/blogs/search/${val || '%'}`)
+            axios.get(`/blogs/${val || '%'}`)
                 .then((res) => this.$emit("searched-blogs", res.data))
         }
     }
