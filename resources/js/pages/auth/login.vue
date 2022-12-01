@@ -4,22 +4,13 @@ div(class="auth-alignment")
     //- -------------------------------------------------------------------------------------------
     ui-content-box()
         template(#content)
-            h1(class="font-bold mb-2 text-2xl text-gray-800") Signup here...
+            h1(class="font-bold mb-2 text-2xl text-gray-800") 👋 Welcome back, login here...
 
-            p(class="mb-4 text-gray-400") Enter your details below to sign up, you'll then be asked to verify your email
+            p(class="mb-4 text-gray-400") Enter your details below to log into your account
 
             //- Form
             //- ---------------------------------------------------------------------------------------
             form(class="flex flex-col gap-4")
-                //- Username
-                //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    :placeholder="'Enter your username...'"
-                    :type="'text'"
-                )
-                    template(#icon)
-                        username-icon()
-
                 //- Email
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
@@ -38,19 +29,9 @@ div(class="auth-alignment")
                     template(#icon)
                         password-icon()
 
-                //- Confirm password
-                //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    :placeholder="'Confirm your password...'"
-                    :type="'password'"
-                    class="mb-4"
-                )
-                    template(#icon)
-                        password-icon()
-
                 //- Button
                 //- -----------------------------------------------------------------------------------
-                button(class="auth-submit-button") Signup
+                button(class="auth-submit-button") Login
 
                 //- Divider
                 //- -----------------------------------------------------------------------------------
@@ -73,8 +54,8 @@ div(class="auth-alignment")
 
                 //- Redirect link
                 //- -----------------------------------------------------------------------------------
-                p(class="text-center text-gray-400") Already have an account?{{  " " }}
-                    a(class="auth-link") Login here
+                p(class="text-center text-gray-400") Don't have an account?{{  " " }}
+                    a(class="auth-link") Signup
 
 </template>
 
@@ -85,7 +66,7 @@ div(class="auth-alignment")
 
     // ============================================================================================
     export default {
-        name: "Signup",
+        name: "Login",
         mixins: [authMixin]
     }
 </script>

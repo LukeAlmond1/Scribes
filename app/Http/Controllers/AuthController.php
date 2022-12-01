@@ -12,4 +12,10 @@ class AuthController extends Controller
         // ----------------------------------------------------------------------------------------
         return inertia::render('auth/signup');
     }
+
+    public function login() {
+        // Render frontend login view
+        // ----------------------------------------------------------------------------------------
+        return inertia::render('auth/login');
+    }
 }
