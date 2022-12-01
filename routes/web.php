@@ -6,6 +6,7 @@ use App\Http\Controllers\BlogController;
 // Auth routes
 // ------------------------------------------------------------------------------------------------
 Route::get('auth/signup', [\App\Http\Controllers\AuthController::class, 'signup']);
+Route::get('auth/login', [\App\Http\Controllers\AuthController::class, 'login']);
 
 // Protected routes
 // ------------------------------------------------------------------------------------------------

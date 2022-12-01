@@ -1,13 +1,13 @@
     // Icons
     // ============================================================================================
-    import Username from "../../components/icons/username.vue"
-    import Password from "../../components/icons/password.vue"
-    import Email from "../../components/icons/email.vue"
+    import Username from "../icons/username.vue"
+    import Password from "../icons/password.vue"
+    import Email from "../icons/email.vue"
 
     // UI
     // ============================================================================================
-    import ContentBox from "../../components/ui/contentBox.vue"
-    import FormField from "../../components/ui/formField.vue"
+    import ContentBox from "../ui/contentBox.vue"
+    import FormField from "../ui/formField.vue"
 
     // CSS
     // ============================================================================================
