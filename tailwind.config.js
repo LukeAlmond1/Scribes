@@ -13,7 +13,7 @@ module.exports = {
           'auth-cover': "url('/public/covers/auth.jpg')"
       },
       fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        sans: ['Nunito', ...defaultTheme.fontFamily.sans],
       }
     },
   },
