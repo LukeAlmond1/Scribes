@@ -3,13 +3,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 
-<<<<<<< Updated upstream
-// Auth routes
-// ------------------------------------------------------------------------------------------------
-Route::get('auth/signup', [\App\Http\Controllers\AuthController::class, 'signup']);
-
-=======
->>>>>>> Stashed changes
 // Protected routes
 // ------------------------------------------------------------------------------------------------
 // Route::get('/dashboard', function () {
