@@ -9,7 +9,8 @@ module.exports = {
   theme: {
       extend: {
         backgroundImage: {
-          'blog-cover': "url('/public/covers/blog.jpg')"
+          'blog-cover': "url('/public/covers/blog.jpg')",
+          'auth-cover': "url('/public/covers/auth.jpg')"
       },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],

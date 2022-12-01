@@ -21,3 +21,7 @@ use Illuminate\Support\Facades\Route;
 // ------------------------------------------------------------------------------------------------
 Route::get('blogs', [\App\Http\Controllers\BlogController::class, 'index']);
 Route::post('blogs/search/{query}', [\App\Http\Controllers\BlogController::class, 'search']);
+
+// Auth routes (naming conv will change when backend is incoperated)
+// ------------------------------------------------------------------------------------------------
+Route::get('auth/signup', [\App\Http\Controllers\AuthController::class, 'signup']);
