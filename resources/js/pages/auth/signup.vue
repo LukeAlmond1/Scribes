@@ -10,10 +10,15 @@ div(class="auth-alignment")
 
             //- Form
             //- ---------------------------------------------------------------------------------------
-            form(class="flex flex-col gap-4")
+            form(
+                @submit="handleSignUp"
+                class="flex flex-col gap-4"
+            )
                 //- Username
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
+                    @update-form="updateForm"
+                    :name="'username'"
                     :placeholder="'Enter your username...'"
                     :type="'text'"
                 )
@@ -23,6 +28,8 @@ div(class="auth-alignment")
                 //- Email
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
+                    @update-form="updateForm"
+                    :name="'email'"
                     :placeholder="'Enter your email address...'"
                     :type="'email'"
                 )
@@ -32,6 +39,8 @@ div(class="auth-alignment")
                 //- Password
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
+                    @update-form="updateForm"
+                    :name="'password'"
                     :placeholder="'Enter your password...'"
                     :type="'password'"
                 )
@@ -41,6 +50,8 @@ div(class="auth-alignment")
                 //- Confirm password
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
+                    @update-form="updateForm"
+                    :name="'confirmPassword'"
                     :placeholder="'Confirm your password...'"
                     :type="'password'"
                     class="mb-4"
@@ -50,7 +61,10 @@ div(class="auth-alignment")
 
                 //- Button
                 //- -----------------------------------------------------------------------------------
-                button(class="auth-submit-button") Signup
+                button(
+                    type="submit"
+                    class="auth-submit-button"
+                ) Signup
 
                 //- Divider
                 //- -----------------------------------------------------------------------------------
