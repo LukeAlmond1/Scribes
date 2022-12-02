@@ -10,10 +10,15 @@ div(class="auth-alignment")
 
             //- Form
             //- ---------------------------------------------------------------------------------------
-            form(class="flex flex-col gap-4")
+            form(
+                @submit="handleLogin"
+                class="flex flex-col gap-4"
+            )
                 //- Email
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
+                    @update-form="updateForm"
+                    :name="'email'"
                     :placeholder="'Enter your email address...'"
                     :type="'email'"
                 )
@@ -23,6 +28,8 @@ div(class="auth-alignment")
                 //- Password
                 //- -----------------------------------------------------------------------------------
                 ui-form-field(
+                    @update-form="updateForm"
+                    :name="'password'"
                     :placeholder="'Enter your password...'"
                     :type="'password'"
                 )
@@ -55,7 +62,12 @@ div(class="auth-alignment")
                 //- Redirect link
                 //- -----------------------------------------------------------------------------------
                 p(class="text-center text-gray-400") Don't have an account?{{  " " }}
-                    a(class="auth-link") Signup
+                    a(
+                        href="/register"
+                        rel="noopener noreferrer nofollow"
+                        type="submit"
+                        class="auth-link"
+                    ) Signup
 
 </template>
 

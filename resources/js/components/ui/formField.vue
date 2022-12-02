@@ -6,6 +6,7 @@ aside(class="auth-input-box")
     input(
         :placeholder="placeholder"
         :type="type"
+        v-model="val"
         class="auth-input-field"
     )
 
@@ -19,6 +20,11 @@ aside(class="auth-input-box")
     // ================================================================================================
     export default {
         name: "FormField",
+        data() {
+            return {
+                val: ""
+            }
+        },
         props: {
             placeholder: {
                 default: "",
@@ -28,6 +34,15 @@ aside(class="auth-input-box")
                 default: "text",
                 type: String
             },
+            name: {
+                default: "",
+                type: String
+            }
+        },
+        watch: {
+            val() {
+                this.$emit("update-form", {key: this.name, value: this.val});
+            }
         }
     }
 </script>
