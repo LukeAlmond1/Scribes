@@ -11,41 +11,50 @@ div(class="auth-alignment")
             //- Form
             //- ---------------------------------------------------------------------------------------
             form(
-                @submit="handleSignUp"
+                @submit.prevent="handleSignUp"
                 class="flex flex-col gap-4"
             )
                 //- Username
                 //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    @update-form="updateForm"
-                    :name="'username'"
-                    :placeholder="'Enter your username...'"
-                    :type="'text'"
-                )
-                    template(#icon)
-                        username-icon()
+                section()
+                    p(class="mb-2 text-red-500") {{ errors["username"] }}
+
+                    ui-form-field(
+                        @update-form="updateForm"
+                        :name="'username'"
+                        :placeholder="'Enter your username...'"
+                        :type="'text'"
+                    )
+                        template(#icon)
+                            username-icon()
 
                 //- Email
                 //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    @update-form="updateForm"
-                    :name="'email'"
-                    :placeholder="'Enter your email address...'"
-                    :type="'email'"
-                )
-                    template(#icon)
-                        email-icon()
+                section()
+                    p(class="mb-2 text-red-500") {{ errors["email"] }}
+
+                    ui-form-field(
+                        @update-form="updateForm"
+                        :name="'email'"
+                        :placeholder="'Enter your email address...'"
+                        :type="'email'"
+                    )
+                        template(#icon)
+                            email-icon()
 
                 //- Password
                 //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    @update-form="updateForm"
-                    :name="'password'"
-                    :placeholder="'Enter your password...'"
-                    :type="'password'"
-                )
-                    template(#icon)
-                        password-icon()
+                section()
+                    p(class="mb-2 text-red-500") {{ errors["password"] }}
+
+                    ui-form-field(
+                        @update-form="updateForm"
+                        :name="'password'"
+                        :placeholder="'Enter your password...'"
+                        :type="'password'"
+                    )
+                        template(#icon)
+                            password-icon()
 
                 //- Confirm password
                 //- -----------------------------------------------------------------------------------

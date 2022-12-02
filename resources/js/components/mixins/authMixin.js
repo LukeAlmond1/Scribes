@@ -16,6 +16,12 @@
     // ============================================================================================
     export default {
         name: "authMixin",
+        props: {
+            errors: {
+                default: () => ({}),
+                type: Object
+            }
+        },
         components: {
             "username-icon": Username,
             "password-icon": Password,
@@ -33,8 +39,6 @@
         },
         methods: {
             handleSignUp(e) {
-                e.preventDefault();
-
                 this.$inertia.post("/register", {
                     username: this.username,
                     email: this.email,
@@ -44,8 +48,6 @@
             },
 
             handleLogin(e) {
-                e.preventDefault();
-
                 this.$inertia.post("/login", {
                     email: this.email,
                     password: this.password

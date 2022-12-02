@@ -11,30 +11,36 @@ div(class="auth-alignment")
             //- Form
             //- ---------------------------------------------------------------------------------------
             form(
-                @submit="handleLogin"
+                @submit.prevent="handleLogin"
                 class="flex flex-col gap-4"
             )
                 //- Email
                 //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    @update-form="updateForm"
-                    :name="'email'"
-                    :placeholder="'Enter your email address...'"
-                    :type="'email'"
-                )
-                    template(#icon)
-                        email-icon()
+                section()
+                    p(class="mb-2 text-red-500") {{ errors["email"] }}
+
+                    ui-form-field(
+                        @update-form="updateForm"
+                        :name="'email'"
+                        :placeholder="'Enter your email address...'"
+                        :type="'email'"
+                    )
+                        template(#icon)
+                            email-icon()
 
                 //- Password
                 //- -----------------------------------------------------------------------------------
-                ui-form-field(
-                    @update-form="updateForm"
-                    :name="'password'"
-                    :placeholder="'Enter your password...'"
-                    :type="'password'"
-                )
-                    template(#icon)
-                        password-icon()
+                section()
+                    p(class="mb-2 text-red-500") {{ errors["password"] }}
+
+                    ui-form-field(
+                        @update-form="updateForm"
+                        :name="'password'"
+                        :placeholder="'Enter your password...'"
+                        :type="'password'"
+                    )
+                        template(#icon)
+                            password-icon()
 
                 //- Button
                 //- -----------------------------------------------------------------------------------
