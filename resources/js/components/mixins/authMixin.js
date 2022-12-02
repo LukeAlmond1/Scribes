@@ -36,7 +36,7 @@
                 e.preventDefault();
 
                 this.$inertia.post("/register", {
-                    name: this.username,
+                    username: this.username,
                     email: this.email,
                     password: this.password,
                     password_confirmation: this.confirmPassword
