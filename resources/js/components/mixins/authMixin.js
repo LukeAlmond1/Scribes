@@ -46,7 +46,10 @@
             handleLogin(e) {
                 e.preventDefault();
 
-                console.log([this.email, this.password]);
+                this.$inertia.post("/login", {
+                    email: this.email,
+                    password: this.password
+                })
             },
 
             updateForm(data) {
