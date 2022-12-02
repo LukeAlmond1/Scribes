@@ -35,7 +35,18 @@
             handleSignUp(e) {
                 e.preventDefault();
 
-                alert([this.username, this.email, this.password, this.confirmPassword]);
+                this.$inertia.post("/register", {
+                    username: this.username,
+                    email: this.email,
+                    password: this.password,
+                    confirmed: this.confirmPassword
+                })
+            },
+
+            handleLogin(e) {
+                e.preventDefault();
+
+                console.log([this.email, this.password]);
             },
 
             updateForm(data) {

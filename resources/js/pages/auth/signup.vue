@@ -88,7 +88,11 @@ div(class="auth-alignment")
                 //- Redirect link
                 //- -----------------------------------------------------------------------------------
                 p(class="text-center text-gray-400") Already have an account?{{  " " }}
-                    a(class="auth-link") Login here
+                    a(
+                        href="/login"
+                        rel="noopener noreferrer nofollow"
+                        class="auth-link"
+                    ) Login here
 
 </template>
 
