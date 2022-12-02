@@ -10,12 +10,12 @@ div
 
         ul(class="header-list")
             li(
-                :class="{ 'text-blue-700' : pathName === '/blogs' }"
+                :class="{ '!text-blue-700' : pathName === '/blogs' }"
                 class="header-link"
             ) Blogs
 
             li(
-                :class="{ 'text-blue-700' : pathName === '/account' }"
+                :class="{ '!text-blue-700' : pathName === '/account' }"
                 class="header-link"
             ) Account
 
