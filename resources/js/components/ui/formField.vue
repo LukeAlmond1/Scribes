@@ -6,6 +6,7 @@ aside(class="auth-input-box")
     input(
         :placeholder="placeholder"
         :type="type"
+        :disabled="editable"
         v-model="val"
         class="auth-input-field"
     )
@@ -37,6 +38,10 @@ aside(class="auth-input-box")
             name: {
                 default: "",
                 type: String
+            },
+            editable: {
+                default: false,
+                type: Boolean
             }
         },
         watch: {

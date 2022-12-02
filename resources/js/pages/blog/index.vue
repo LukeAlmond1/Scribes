@@ -9,6 +9,7 @@ div
         v-if="blogData"
         :articles="blogData"
     )
+
 </template>
 
 <script>

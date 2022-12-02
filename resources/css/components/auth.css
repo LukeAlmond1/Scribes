@@ -22,7 +22,7 @@
     }
 
     .auth-submit-button {
-        @apply bg-blue-600 font-bold py-5 rounded-md text-white w-full hover:bg-blue-700;
+        @apply bg-blue-600 font-semibold py-5 rounded-md text-white w-full hover:bg-blue-700;
     }
 
     .auth-icon-box {
@@ -34,6 +34,6 @@
     }
 
     .auth-google-button {
-        @apply bg-white border-2 border-gray-800 cursor-pointer flex font-bold gap-3 items-center justify-center py-4 rounded-md text-gray-800 w-full hover:bg-gray-100;
+        @apply bg-white border-2 border-gray-800 cursor-pointer flex font-semibold gap-3 items-center justify-center py-4 rounded-md text-gray-800 w-full hover:bg-gray-100;
     }
 }
