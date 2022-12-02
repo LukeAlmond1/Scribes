@@ -71,7 +71,6 @@ div(class="auth-alignment")
                     a(
                         href="/register"
                         rel="noopener noreferrer nofollow"
-                        type="submit"
                         class="auth-link"
                     ) Signup
 

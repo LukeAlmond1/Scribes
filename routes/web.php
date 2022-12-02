@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AccountController;
 
 // Protected routes
 // ------------------------------------------------------------------------------------------------
@@ -9,14 +10,24 @@ use App\Http\Controllers\BlogController;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
+// Blog routes
+// ------------------------------------------------------------------------------------
 Route::
     middleware('auth')
     ->name('blogs')
     ->group(
         function () {
-            // Blog routes
-            // ------------------------------------------------------------------------------------
             Route::resource('blogs', BlogController::class);
+        }
+    );
+
+// Account routes
+// ------------------------------------------------------------------------------------
+Route::middleware('auth')
+    ->name('accounts')
+    ->group(
+        function () {
+            Route::resource('account', AccountController::class);
         }
     );
 

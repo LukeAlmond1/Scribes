@@ -5,17 +5,21 @@ div
         v-if="showModal"
     )
 
-    nav(class="header-nav")
+    section(class="header-nav")
         p(class="logo") Scribes
 
-        ul(class="header-list")
-            li(
+        nav(class="header-list")
+            a(
                 :class="{ '!text-blue-700' : pathName === '/blogs' }"
+                href="/blogs"
+                rel="noopener noreferrer nofollow"
                 class="header-link"
             ) Blogs
 
-            li(
+            a(
                 :class="{ '!text-blue-700' : pathName === '/account' }"
+                href="/account"
+                rel="noopener noreferrer nofollow"
                 class="header-link"
             ) Account
 

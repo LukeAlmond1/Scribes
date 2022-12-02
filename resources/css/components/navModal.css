@@ -10,11 +10,11 @@
     }
 
     .modal-nav {
-        @apply h-full mx-auto relative w-11/12;
+        @apply h-full flex flex-col items-center relative w-full;
     }
 
     .modal-header {
-        @apply border-b-2 flex items-center justify-between mb-6 pb-6;
+        @apply border-b-2 flex items-center justify-between mb-6 px-12 pb-6 w-full;
     }
 
     .modal-nav-link {
@@ -22,7 +22,7 @@
     }
 
     .modal-create-button {
-        @apply absolute bottom-0 bg-blue-700 font-bold py-6 rounded-md text-white w-full hover:bg-blue-800;
+        @apply absolute bottom-0 bg-blue-700 font-bold mx-auto py-6 rounded-md text-white w-11/12 hover:bg-blue-800;
     }
 
     .logo {

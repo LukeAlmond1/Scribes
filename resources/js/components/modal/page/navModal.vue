@@ -8,7 +8,7 @@ div(class="modal-container")
 
             close-modal(@click="$emit('modal-change')")
 
-        ul()
+        ul(class="px-8 w-full")
             //- Blogs tab
             //- -----------------------------------------------------------------------------------
             li(class="modal-nav-link")

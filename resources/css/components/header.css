@@ -10,7 +10,7 @@
     }
 
     .header-nav {
-        @apply bg-white flex items-center justify-between mx-auto py-6 w-11/12;
+        @apply bg-white border-b-2 border-gray-100 flex items-center justify-between mx-auto py-6 px-12 w-full;
     }
 
     .header-list {
