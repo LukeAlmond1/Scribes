@@ -1,9 +1,9 @@
 <template lang="pug">
-div(class="grid grid-cols-2 px-12 mt-12")
+div(class="mt-12")
     section()
         h1(class="font-semibold mb-4 text-2xl text-gray-800") Account details
 
-        form(class="flex flex-col gap-4")
+        form(class="grid gap-4 md:grid-cols-2")
             //- Username
             //- -----------------------------------------------------------------------------------
             ui-form-field(
